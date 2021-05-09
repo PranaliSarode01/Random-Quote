@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  text-align: center;
+  color:white;
+}
+body
+{
+display:grid;
+height:100vh;
+place-items:centre;
+justify-content:centre;
+background:url(img2.jpg);
+background-size:cover;
+
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  
+h1
+	{
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	font-variant: normal;
+	margin: 0;
+	}
+
+
+</style>
+</head>
+<body>
+	
+	<div class = 'container'>
+        <div class="centered">
+        <h1> Quotes </h1>
+	<hr  style = "color : black">
+	<h2> The greatest glory in living lies not in never falling, but in rising every time we fall.</h2>
+	<h3> -Nelson Mandela</h3>
+	<button type="button">MORE QUOTES.<style= font-size:'20px'></button>
+      </div>
+  </div>
+<script>
+let quotes = [
+ {
+   quotes:"The way to get started is to quit talking and begin doing.",
+   author:"-Walt Disney"
+ },
+ {
+   quotes:"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking." ,
+   author:"-Steve Jobs"
+ },
+ {
+   quotes:"If life were predictable it would cease to be life, and be without flavor." ,
+   author:"-Eleanor Roosevelt"
+ },
+ {
+   quotes:"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough." ,
+   author:"-Oprah Winfrey"
+ },
+ {
+  quotes:"If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.", 
+  author:"-James Cameron"
+ },
+ {
+  quotes:"Life is what happens when you're busy making other plans.",
+  author: "-John Lennon"
+ }
+
+]
+
+let h2 = document.querySelector("h2");
+let h3 = document.querySelector("h3");
+let button = document.querySelector("button");    
+button.addEventListener("click" , ()=>{
+      let random = Math.floor(Math.random() * quotes.length);
+      console.log(random);
+      h2.innerText = quotes[random].quotes;
+      h3.innerText = quotes[random].author;
+});
+</script>
+</body>
+</html>
